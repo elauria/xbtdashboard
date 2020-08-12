@@ -10,9 +10,11 @@ You must have docker installed and running:
 
 ```
 docker-compose up -d
-open localhost:3030
+open localhost:9999
 ```
 
-Use credentials admin/admin to log in.
+Follow instructions to set up your account on InfluxDB
+
+Run the improter scripts or add them to your crontab
 
 Enjoy
