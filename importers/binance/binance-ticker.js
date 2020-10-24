@@ -20,6 +20,16 @@ const main = async () => {
     if (oi.data.length)
       result.oi = parseFloat(oi.data.pop().sumOpenInterestValue);
 
+    let funding = await axios.get(`${endp}/fapi/v1/fundingRate`, {
+      params: {
+        symbol: "BTCUSDT",
+        limit: 1,
+      },
+    });
+    if (!funding) throw `Unable to fetch binance funding`;
+    if (funding.data.length)
+      result.fundingRate = parseFloat(funding.data[0].fundingRate);
+
     let takerLongShortRatio = await axios.get(
       `${endp}/futures/data/takerlongshortRatio `,
       {
