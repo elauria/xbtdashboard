@@ -52,6 +52,7 @@ const main = async () => {
     const p = new Point(`ticker`)
       .tag("symbol", "BTCUSDT")
       .floatField("openInterest", result.oi)
+      .floatField("fundingRate", result.fundingRate)
       .floatField("buyVol", result.buyVol)
       .floatField("sellVol", result.sellVol)
       .floatField("takerBuySellRatio", result.takerBuySellRatio)
