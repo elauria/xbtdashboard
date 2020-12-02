@@ -23,6 +23,7 @@ const main = async () => {
       .floatField("bidPrice", parseFloat(instrument.bidPrice))
       .floatField("askPrice", parseFloat(instrument.askPrice))
       .floatField("openInterest", parseFloat(instrument.openInterest))
+      .floatField("vwap", parseFloat(instrument.vwap))
       .timestamp(new Date(instrument.timestamp));
     writeApi.writePoint(p);
     writeApi
